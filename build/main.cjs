@@ -4969,6 +4969,7 @@ function buildMultiexp(curve, groupName) {
             throw new Error("Invalid group");
         }
 
+        if (nPoints == 0) return G.zero;
         const nPoints = Math.floor(buffBases.byteLength / sGIn);
         const sScalar = Math.floor(buffScalars.byteLength / nPoints);
         if( sScalar * nPoints != buffScalars.byteLength) {
